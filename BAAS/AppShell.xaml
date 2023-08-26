@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BAAS.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BAAS"
+    xmlns:view="clr-namespace:BAAS.View"
+    xmlns:resources="clr-namespace:BAAS.Resources"
+    BackgroundColor="{x:Static resources:Colors.BackgroundDark}"
+    Shell.FlyoutBehavior="Flyout">
+    <!--Shell.FlyoutBehavior="Disabled">-->
+
+
+    <!--<Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="red" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>-->
+
+    <ShellContent
+        FlyoutIcon="home.svg"
+        Title="BAAS"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="BAAS" />
+    <ShellContent
+        FlyoutIcon="home.svg"
+        Title="My Submarinees"
+        ContentTemplate="{DataTemplate view:MySubmarines}"
+        Route="My Submarines" />
+
+    <!--<TabBar>
+        <Tab Title="Home" Icon="home.svg">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="Home" />
+        </Tab>
+
+        <Tab Title="Layouts" Icon="layout.svg">
+            <ShellContent
+                Title="Layouts"
+                ContentTemplate="{DataTemplate local:TestLayout}"
+                Route="Layouts" />
+        </Tab>
+
+        <Tab Title="Dice" Icon="dice.svg">
+           <ShellContent
+               Title="Dice"
+               ContentTemplate="{DataTemplate local:TestXaml}"
+               Route="Dice" />
+        </Tab>
+    </TabBar>-->
+    
+    
+
+</Shell>

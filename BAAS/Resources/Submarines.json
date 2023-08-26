@@ -1,0 +1,52 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Yellow Submarine",
+    "Color": "Yellow"
+  },
+  {
+    "Id": 2,
+    "Name": "Blue Mariner",
+    "Color": "Blue"
+  },
+  {
+    "Id": 3,
+    "Name": "Crimson Explorer",
+    "Color": "Red"
+  },
+  {
+    "Id": 4,
+    "Name": "Ocean Voyager",
+    "Color": "Green"
+  },
+  {
+    "Id": 5,
+    "Name": "Silver Shark",
+    "Color": "Silver"
+  },
+  {
+    "Id": 6,
+    "Name": "Black Pearl",
+    "Color": "Black"
+  },
+  {
+    "Id": 7,
+    "Name": "White Star",
+    "Color": "White"
+  },
+  {
+    "Id": 8,
+    "Name": "Golden Trident",
+    "Color": "Gold"
+  },
+  {
+    "Id": 9,
+    "Name": "Ruby Sub",
+    "Color": "Red"
+  },
+  {
+    "Id": 10,
+    "Name": "Sapphire Diver",
+    "Color": "Blue"
+  }
+]

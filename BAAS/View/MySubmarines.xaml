@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:BAAS.Resources"
+             xmlns:model="clr-namespace:BAAS.Model"
+             xmlns:viewmodel="clr-namespace:BAAS.ViewModel"
+             x:DataType="viewmodel:SubmarineViewModel"
+             x:Class="BAAS.View.MySubmarines"
+             Title="{Binding TitleOfCurrentPage}">
+    <!--See BindingContext in cs file-->
+
+    <!--<Grid 
+        
+        ColumnDefinitions="*, *, *, *, *, *" 
+        Margin="24, 40"
+        ColumnSpacing="16"
+        RowDefinitions="*, Auto">-->
+    <!-- ColumnDefinitions="*, *" means divide up in two equal columns 50%, 50% -->
+
+
+    <Grid ColumnDefinitions="*" RowDefinitions="auto, auto, *">
+
+        <Grid.Margin>
+            <Thickness 
+                Left="{x:Static resources:Spacing.S7x}" 
+                Top="{x:Static resources:Spacing.S10x}" 
+                Right="{x:Static resources:Spacing.S7x}"  
+                Bottom="{x:Static resources:Spacing.S10x}"/>
+        </Grid.Margin>
+
+        <Button 
+            Text="Add Submarine" 
+            FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+            FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+            TextColor="{x:Static Member=resources:Colors.FontDark}" 
+            ImageSource="plus.svg"
+            ContentLayout="Right,8"
+            BackgroundColor="{x:Static Member=resources:Colors.AccentLight}" 
+            BorderColor="{x:Static Member=resources:Colors.BackgroundDark}" 
+            BorderWidth="{x:Static Member=resources:BorderSize.BorderStandard}"
+            CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}"
+            HeightRequest="44"
+            WidthRequest="215">
+            <Button.Margin>
+                <Thickness Bottom="{x:Static Member=resources:Spacing.S7x}"/>
+            </Button.Margin>
+        </Button>
+
+        <Entry 
+            Grid.Row="1"
+            Placeholder="Search" 
+            FontFamily="{x:Static Member=resources:Font.FontFamilyStandard}" 
+            FontSize="{x:Static Member=resources:FontSizes.PLargeSize}">
+            <Entry.Margin>
+                <Thickness Bottom="{x:Static Member=resources:Spacing.S7x}"/>
+            </Entry.Margin>
+        </Entry>
+
+        <RefreshView
+            Grid.Row="2"
+            Command="{Binding GetSubmarineListCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding Submarines}" SelectionMode="None">
+                    <!--SelectionMode="None" means nothing can be clicked-->
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Submarine">
+                        <FlexLayout 
+                            JustifyContent="SpaceBetween" 
+                            BackgroundColor="{x:Static Member=resources:Colors.BackgroundLight}">
+                            <FlexLayout.Margin>
+                                <Thickness Bottom="{x:Static Member=resources:Spacing.S4x}"/>
+                            </FlexLayout.Margin>
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TestThis" />
+                            </FlexLayout.GestureRecognizers>
+                            <HorizontalStackLayout
+                                Spacing="{x:Static Member=resources:Spacing.S5x}">
+                                <HorizontalStackLayout.Padding>
+                                    <Thickness 
+                                        Top="{x:Static Member=resources:Spacing.S4x}"
+                                        Bottom="{x:Static Member=resources:Spacing.S4x}"
+                                        Left="{x:Static Member=resources:Spacing.S6x}"
+                                        Right="{x:Static Member=resources:Spacing.S6x}"
+                                        />
+                                </HorizontalStackLayout.Padding>
+
+                                <Image 
+                                    WidthRequest="30"
+                                    Source="submarine.svg"/>
+                                <StackLayout 
+                                        VerticalOptions="CenterAndExpand"
+                                        MaximumWidthRequest="173">
+                                    <Label 
+                                            Text="{Binding Name}" 
+                                            FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                                            FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                                            TextColor="{x:Static Member=resources:Colors.FontDark}"/>
+                                </StackLayout>
+
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <HorizontalStackLayout.Padding>
+                                    <Thickness 
+                                        Right="{x:Static Member=resources:Spacing.S5x}"
+                                        />
+                                </HorizontalStackLayout.Padding>
+                                <Image 
+                                    Source="arrow.svg"/>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        
+        <!--<RefreshView
+            Grid.Row="2"
+            Command="{Binding GetSubmarineListCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding Submarines}" SelectionMode="None">
+                    --><!--SelectionMode="None" means nothing can be clicked--><!--
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Submarine">
+                        <FlexLayout JustifyContent="SpaceBetween" BackgroundColor="#F0F0F0" Padding="200">
+                                <FlexLayout.Margin>
+                                    <Thickness Bottom="{x:Static Member=resources:Spacing.S6x}"/>
+                                </FlexLayout.Margin>
+                                <StackLayout 
+                            VerticalOptions="CenterAndExpand"
+                            MaximumWidthRequest="118">
+                                    <Label 
+                                Text="{Binding Name}" 
+                                FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                                FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"/>
+                                </StackLayout>
+                                <HorizontalStackLayout>
+                                    <Button 
+                                Text="Edit" 
+                                TextColor="{x:Static Member=resources:Colors.FontLight}"
+                                FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                                FontSize="{x:Static Member=resources:FontSizes.PSmallSize}"
+                                ImageSource="edit2.png"
+                                ContentLayout="Right,8"
+                                WidthRequest="84"
+                                HeightRequest="32"
+                                Padding="0"
+                                BackgroundColor="{x:Static Member=resources:Colors.AccentDark}"
+                                CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}">
+                                        <Button.Margin>
+                                            <Thickness Right="{x:Static Member=resources:Spacing.S4x}"/>
+                                        </Button.Margin>
+                                    </Button>
+                                    <Button 
+                                Text="Delete"
+                                TextColor="{x:Static Member=resources:Colors.FontDark}"
+                                FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                                FontSize="{x:Static Member=resources:FontSizes.PSmallSize}"
+                                ImageSource="delete2.png"
+                                ContentLayout="Right,8"
+                                WidthRequest="84"
+                                HeightRequest="32"
+                                Padding="0"
+                                BackgroundColor="{x:Static Member=resources:Colors.BackgroundLight}"
+                                CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}"/>
+                                </HorizontalStackLayout>
+                            </FlexLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>-->
+        
+
+
+
+            <!--<Button
+            Text="Fetch Submarines" 
+            Command="{Binding GetSubmarineListCommand}" 
+            IsEnabled="{Binding PageIsNotLoading}"
+            Grid.Row="1"
+            Grid.Column="0">
+        </Button>
+
+        <Button
+            Text="TEST DEBUG" 
+            Clicked="TestDebug" 
+            IsEnabled="{Binding PageIsNotLoading}"
+            Grid.Row="1"
+            Grid.Column="0">
+        </Button>-->
+
+
+
+        <!--<Button     Instead I retrive it automatically in the constructor. 
+            Text="Fetch Submarines" 
+            Command="{Binding GetSubmarineListCommand}" 
+            IsEnabled="{Binding PageIsNotLoading}"
+            Grid.Row="1"
+            Grid.Column="0"> 
+            -->
+        <!-- See method GetSubmarineList with decorator [RelayCommand] which generates GetSubmarineListCommand -->
+        <!--
+        </Button>-->
+
+    </Grid>
+
+
+</ContentPage>

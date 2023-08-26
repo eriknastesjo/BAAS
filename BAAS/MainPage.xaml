@@ -1,0 +1,89 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:BAAS.Resources"
+             x:Class="BAAS.MainPage"
+             Title="BAAS">
+
+    <VerticalStackLayout>
+
+        <Grid 
+            VerticalOptions="Start"
+            Padding="0">
+            <Grid.Margin>
+                <Thickness
+                    Top="{x:Static resources:Spacing.S5x}"
+                    Bottom="{x:Static resources:Spacing.S8x}"/>
+            </Grid.Margin>
+            
+            <Image 
+                Source="hero_image.png" 
+                Aspect="AspectFit" />
+            <Label 
+                x:Name="heroLabel"
+                Text="New airplane:&#10;Sunbeam 2.0!" 
+                FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                FontSize="{x:Static resources:FontSizes.H1Size}"
+                Margin="{x:Static resources:Spacing.S4x}"
+                HorizontalOptions="Start" 
+                VerticalOptions="Start" 
+                TextColor="{x:Static resources:Colors.White}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OpenWebPage_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Button 
+                Clicked="OpenWebPage_Clicked"
+                Text="Read More"
+                TextColor="{x:Static resources:Colors.FontDark}"
+                FontSize="{x:Static resources:FontSizes.PMediumSize}"
+                FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                BackgroundColor="{x:Static resources:Colors.AccentLight}"
+                CornerRadius="{x:Static resources:Radius.RadiusStandard}"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="{x:Static resources:Spacing.S4x}"
+                Padding="0" 
+                HeightRequest="34"
+                WidthRequest="99">
+            </Button>
+        </Grid>
+
+
+        <VerticalStackLayout
+            Spacing="{x:Static resources:Spacing.S4x}">
+            <VerticalStackLayout.Margin>
+                <Thickness 
+                Left="{x:Static resources:Spacing.S7x}" 
+                Top="0" 
+                Right="{x:Static resources:Spacing.S7x}"  
+                Bottom="{x:Static resources:Spacing.S10x}"/>
+            </VerticalStackLayout.Margin>
+
+            <HorizontalStackLayout
+                Spacing="{x:Static resources:Spacing.S3x}">
+                <BoxView 
+                    Color="{x:Static resources:Colors.AccentLight}" 
+                    WidthRequest="5" 
+                    HeightRequest="140" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand" />
+                <Label 
+                    Text="”We are convinced that high ethical standards and responsibility in our operations are also critical to long-term profitability.”"
+                    TextColor="{x:Static resources:Colors.FontDark}"
+                    FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                    FontSize="{x:Static resources:FontSizes.H2Size}"
+                    LineBreakMode="WordWrap"
+                    WidthRequest="308"
+                    />
+            </HorizontalStackLayout>
+            <Label 
+                Text="Micael Johansson, President &amp; CEO"
+                FontFamily="{x:Static resources:Font.FontFamilyStandard}"
+                FontSize="{x:Static resources:FontSizes.PLargeSize}"/>
+        </VerticalStackLayout>
+
+
+
+    </VerticalStackLayout>
+
+</ContentPage>
