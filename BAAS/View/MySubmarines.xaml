@@ -7,6 +7,7 @@
              x:DataType="viewmodel:SubmarineViewModel"
              x:Class="BAAS.View.MySubmarines"
              Title="{Binding TitleOfCurrentPage}">
+    <!--DataType tells what data can be expected (that's how it finds TitleOfCurrentPage)-->
     <!--See BindingContext in cs file-->
 
     <!--<Grid 
@@ -71,7 +72,21 @@
                                 <Thickness Bottom="{x:Static Member=resources:Spacing.S4x}"/>
                             </FlexLayout.Margin>
                             <FlexLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TestThis" />
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType=
+                                    {x:Type viewmodel:SubmarineViewModel}}, Path=GoToSubmarineDetailsCommand}" 
+                                    CommandParameter="{Binding .}"/>
+                                <!-- RelativeSource is used to look up the visual tree for an ancestor (parent) 
+                                of the UI element that has a type of viewmodel:SubmarineViewModel. 
+                                In other words, it's trying to find a parent element in the 
+                                XAML hierarchy of type SubmarineViewModel. Once it has found the 
+                                SubmarineViewModel ancestor, it's binding to the GoToSubmarineDetailsCommand property 
+                                of that view model. This means that when the tap event occurs, it will trigger 
+                                the GoToSubmarineDetailsCommand command of the SubmarineViewModel.
+                                CommandParameter="{Binding .}" passes the current binding context 
+                                (in this case, a model:Submarine) as the parameter to the command. 
+                                This allows the GoToSubmarineDetailsCommand to receive information about 
+                                the specific submarine that was tapped.-->
                             </FlexLayout.GestureRecognizers>
                             <HorizontalStackLayout
                                 Spacing="{x:Static Member=resources:Spacing.S5x}">

@@ -25,8 +25,8 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="BAAS" />
     <ShellContent
-        FlyoutIcon="home.svg"
-        Title="My Submarinees"
+        FlyoutIcon="submarine_grey.svg"
+        Title="My Submarines"
         ContentTemplate="{DataTemplate view:MySubmarines}"
         Route="My Submarines" />
 

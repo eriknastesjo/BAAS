@@ -1,5 +1,6 @@
 ﻿using BAAS.Model;
 using BAAS.Services;
+using BAAS.View;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -54,16 +55,16 @@ namespace BAAS.ViewModel
             }
         }
 
-        //[RelayCommand]
-        //async Task GoToSubmarineDetails(Submarine submarine)
-        //{
-        //    if (submarine == null) return;
-        //    // Go to page SubmarineDetailsPage, animation = true,
-        //    // expect a dictionary with string submarine name as a key and the Submarine object as value
-        //    await Shell.Current.GoToAsync(nameof(SubmarineDetails), true, new Dictionary<string, object>
-        //    {
-        //        {nameof(Submarine), submarine}
-        //    });
-        //}
+        [RelayCommand]
+        async Task GoToSubmarineDetails(Submarine submarine)
+        {
+            if (submarine == null) return;
+            // Go to page SubmarineDetails page, animation = true,
+            // expect a dictionary with string submarine name as a key and the Submarine object as value
+            await Shell.Current.GoToAsync(nameof(SubmarineDetails), true, new Dictionary<string, object>
+            {
+                {nameof(Submarine), submarine}
+            });
+        }
     }
 }

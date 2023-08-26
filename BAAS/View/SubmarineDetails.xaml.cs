@@ -1,9 +1,12 @@
+using BAAS.ViewModel;
+
 namespace BAAS.View;
 
-public partial class SubmarineDetails : ContentView
+public partial class SubmarineDetails : ContentPage
 {
-	public SubmarineDetails()
+	public SubmarineDetails(SubmarineDetailsViewModel submarineDetailsViewModel)
 	{
 		InitializeComponent();
+		BindingContext = submarineDetailsViewModel;	
 	}
 }
