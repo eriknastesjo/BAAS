@@ -4,11 +4,10 @@
 
 Welcome to Project BAAS! This project is designed to help me learn and experiment with MAUI (Multi-platform App UI) development. MAUI is a cross-platform framework for building native mobile and desktop apps using C# and .NET.
 
-
 <div>
-    <img src="https://github.com/eriknastesjo/BAAS/assets/89773064/45af0f1b-a973-4387-b841-5f3b11ee4608" width="200">
+    <img src="https://github.com/eriknastesjo/BAAS/assets/89773064/d2a2518f-807c-4c77-ac79-ad0aa8ecd918" width="200">
   <span>___</span>
-    <img src="https://github.com/eriknastesjo/BAAS/assets/89773064/bbe0b22e-ce2c-438e-bad0-6db771038a30" width="200">
+    <img src="https://github.com/eriknastesjo/BAAS/assets/89773064/e8fbf6c6-744b-45b5-8ec0-fda1bac4ace9" width="200">
 </div>
 
 ## Getting Started
