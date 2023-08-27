@@ -11,6 +11,7 @@ namespace BAAS.Resources
     {
         public static readonly string FontFamilyStandard = "FamiljenGrotesk";
         public static readonly string FontFamilySemiBold = "FamiljenGroteskSemibold";
+        public static readonly string FontFamilyBold = "FamiljenGroteskBold";
     }
 
     static class FontSizes

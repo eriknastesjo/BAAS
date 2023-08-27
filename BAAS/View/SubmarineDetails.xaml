@@ -2,13 +2,219 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BAAS.View.SubmarineDetails"
+             xmlns:resources="clr-namespace:BAAS.Resources"
              xmlns:viewmodel="clr-namespace:BAAS.ViewModel"
              x:DataType="viewmodel:SubmarineDetailsViewModel"
              Title="{Binding TitleOfCurrentPage}">
     <VerticalStackLayout>
+        <VerticalStackLayout.Margin>
+            <Thickness 
+                Left="{x:Static resources:Spacing.S7x}" 
+                Top="{x:Static resources:Spacing.S10x}" 
+                Right="{x:Static resources:Spacing.S7x}"  
+                Bottom="{x:Static resources:Spacing.S10x}"/>
+        </VerticalStackLayout.Margin>
+
+        <!--<FlexLayout 
+            JustifyContent="SpaceBetween"
+            AlignItems="Start">
+            <FlexLayout.Margin>
+                <Thickness 
+                    Bottom="{x:Static resources:Spacing.S6x}"/>
+            </FlexLayout.Margin>
+            <Label 
+                Text="{Binding Submarine.Name}"
+                FontFamily="{x:Static resources:Font.FontFamilyBold}"
+                FontSize="{x:Static resources:FontSizes.H1Size}"
+                MaximumWidthRequest="270"/>
+            <Image 
+                WidthRequest="30"
+                Source="submarine.svg">
+                <Image.Margin>
+                    <Thickness 
+                        Top="{x:Static resources:Spacing.S1x}"
+                        Right="{x:Static resources:Spacing.S3x}"/>
+                </Image.Margin>
+            </Image>
+        </FlexLayout>-->
+       
+
         <Label 
             Text="{Binding Submarine.Name}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            FontFamily="{x:Static resources:Font.FontFamilyBold}"
+            FontSize="{x:Static resources:FontSizes.H1Size}">
+            <Label.Margin>
+                <Thickness 
+                    Bottom="{x:Static resources:Spacing.S6x}"/>
+            </Label.Margin>
+        </Label>
+
+        <StackLayout>
+            <StackLayout.Margin>
+                <Thickness 
+                    Bottom="{x:Static resources:Spacing.S3x}"/>
+            </StackLayout.Margin>
+            
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span 
+                            Text="Max Speed: " 
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                        <Span 
+                            Text="{Binding Submarine.MaxSpeedKmPerHour}"
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                        <Span 
+                            Text=" km/h" 
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span 
+                            Text="Max Depth: " 
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                        <Span 
+                            Text="{Binding Submarine.MaxDepthM}"
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                        <Span 
+                            Text=" m" 
+                            FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                            FontSize="{x:Static resources:FontSizes.PMediumSize}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+
+        <Label 
+            Text="{Binding Submarine.Description}"
+            FontFamily="{x:Static resources:Font.FontFamilyStandard}"
+            FontSize="{x:Static resources:FontSizes.PMediumSize}">
+            <Label.Margin>
+                <Thickness 
+                    Bottom="{x:Static resources:Spacing.S9x}"/>
+            </Label.Margin>
+        </Label>
+
+
+
+        <!--We create a StackLayout so that we can center the HorizontalStackLayout horizontally-->
+        <StackLayout>   
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <FlexLayout 
+                    BackgroundColor="{x:Static Member=resources:Colors.AccentDark}"
+                    HeightRequest="36"
+                    WidthRequest="88"
+                    Padding="0"
+                    JustifyContent="Center">
+
+                    <FlexLayout.Margin>
+                        <Thickness Right="{x:Static Member=resources:Spacing.S6x}"/>
+                    </FlexLayout.Margin>
+
+                    <Label 
+                        Text="Edit"
+                        TextColor="{x:Static Member=resources:Colors.FontLight}"
+                        FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                        FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                        VerticalOptions="CenterAndExpand">
+                        <Label.Margin>
+                            <Thickness Right="{x:Static Member=resources:Spacing.S1x}"/>
+                        </Label.Margin>
+                    </Label>
+
+
+                    <Image 
+                        Source="edit.svg" 
+                        WidthRequest="10"
+                        VerticalOptions="CenterAndExpand"/>
+
+                </FlexLayout>
+
+                <FlexLayout 
+                    BackgroundColor="{x:Static Member=resources:Colors.BackgroundLight}"
+                    HeightRequest="36"
+                    WidthRequest="88"
+                    Padding="0"
+                    JustifyContent="Center">
+
+                    <FlexLayout.Margin>
+                        <Thickness Right="{x:Static Member=resources:Spacing.S3x}"/>
+                    </FlexLayout.Margin>
+
+                    <Label 
+                        Text="Delete"
+                        TextColor="{x:Static Member=resources:Colors.FontDark}"
+                        FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                        FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                        VerticalOptions="CenterAndExpand">
+                        <Label.Margin>
+                            <Thickness Right="{x:Static Member=resources:Spacing.S1x}"/>
+                        </Label.Margin>
+                    </Label>
+
+
+                    <Image 
+                        Source="delete.svg" 
+                        WidthRequest="10"
+                        VerticalOptions="CenterAndExpand"/>
+
+                </FlexLayout>
+
+            </HorizontalStackLayout>
+        </StackLayout>
+
+
+
+        <!--<Label 
+                    Text="Edit"
+                    TextColor="{x:Static Member=resources:Colors.FontDark}"
+                    FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                    FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"/>-->
+
+
+
+
+        <!--TODO: MAKE BUTTONS WITH FLEX LAYOUTS INSTEAD--> 
+        <!--<FlexLayout
+            JustifyContent="Center">
+            <Button 
+                Text="Edit" 
+                TextColor="{x:Static Member=resources:Colors.FontLight}"
+                FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                ImageSource="edit2.png"
+                ContentLayout="Right,8"
+                WidthRequest="100"
+                HeightRequest="40"
+                Padding="0"
+                BackgroundColor="{x:Static Member=resources:Colors.AccentDark}"
+                CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}">
+                <Button.Margin>
+                    <Thickness Right="{x:Static Member=resources:Spacing.S3x}"/>
+                </Button.Margin>
+            </Button>
+            <Button 
+                Text="Delete"
+                TextColor="{x:Static Member=resources:Colors.FontDark}"
+                FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
+                FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                ImageSource="delete2.png"
+                ContentLayout="Right,8"
+                WidthRequest="100"
+                HeightRequest="40"
+                Padding="0"
+                BackgroundColor="{x:Static Member=resources:Colors.BackgroundLight}"
+                CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}"/>
+        </FlexLayout>-->
+
     </VerticalStackLayout>
 </ContentPage>

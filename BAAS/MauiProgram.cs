@@ -18,6 +18,7 @@ namespace BAAS
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("FamiljenGrotesk-Regular.ttf", "FamiljenGroteskRegular");
                     fonts.AddFont("FamiljenGrotesk-SemiBold.ttf", "FamiljenGroteskSemibold");
+                    fonts.AddFont("FamiljenGrotesk-Bold.ttf", "FamiljenGroteskBold");
                 }); 
 
 #if DEBUG
