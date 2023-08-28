@@ -20,7 +20,7 @@
                 Aspect="AspectFit" />
             <Label 
                 x:Name="heroLabel"
-                Text="New airplane:&#10;Sunbeam 2.0!" 
+                Text="New airplane:&#10;Sunbeam 2.0" 
                 FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
                 FontSize="{x:Static resources:FontSizes.H1Size}"
                 Margin="{x:Static resources:Spacing.S4x}"
@@ -37,6 +37,7 @@
                 TextColor="{x:Static resources:Colors.FontDark}"
                 FontSize="{x:Static resources:FontSizes.PMediumSize}"
                 FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
+                CharacterSpacing="{x:Static resources:CharacterSpacing.PMediumSpacing}"
                 BackgroundColor="{x:Static resources:Colors.AccentLight}"
                 CornerRadius="{x:Static resources:Radius.RadiusStandard}"
                 HorizontalOptions="End"
@@ -44,7 +45,7 @@
                 Margin="{x:Static resources:Spacing.S4x}"
                 Padding="0" 
                 HeightRequest="34"
-                WidthRequest="99">
+                WidthRequest="112">
             </Button>
         </Grid>
 
@@ -60,18 +61,23 @@
             </VerticalStackLayout.Margin>
 
             <HorizontalStackLayout
-                Spacing="{x:Static resources:Spacing.S3x}">
+                Spacing="{x:Static resources:Spacing.S3x}"
+                HeightRequest="150">
                 <BoxView 
                     Color="{x:Static resources:Colors.AccentLight}" 
                     WidthRequest="5" 
-                    HeightRequest="140" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="FillAndExpand">
+                    <BoxView.Margin>
+                        <Thickness 
+                            Top="3"/>
+                    </BoxView.Margin>
+                </BoxView>
                 <Label 
                     Text="”We are convinced that high ethical standards and responsibility in our operations are also critical to long-term profitability.”"
                     TextColor="{x:Static resources:Colors.FontDark}"
                     FontFamily="{x:Static resources:Font.FontFamilySemiBold}"
                     FontSize="{x:Static resources:FontSizes.H2Size}"
+                    CharacterSpacing="{x:Static resources:CharacterSpacing.H2Spacing}"
                     LineBreakMode="WordWrap"
                     WidthRequest="308"
                     />
@@ -79,7 +85,8 @@
             <Label 
                 Text="Micael Johansson, President &amp; CEO"
                 FontFamily="{x:Static resources:Font.FontFamilyStandard}"
-                FontSize="{x:Static resources:FontSizes.PLargeSize}"/>
+                FontSize="{x:Static resources:FontSizes.PLargeSize}"
+                CharacterSpacing="{x:Static resources:CharacterSpacing.PMediumSpacing}"/>
         </VerticalStackLayout>
 
 

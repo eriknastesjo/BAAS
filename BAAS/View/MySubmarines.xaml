@@ -34,13 +34,14 @@
             FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
             FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
             TextColor="{x:Static Member=resources:Colors.FontDark}" 
+            CharacterSpacing="{x:Static resources:CharacterSpacing.PMediumSpacing}"
             ImageSource="plus.svg"
             ContentLayout="Right,8"
             BackgroundColor="{x:Static Member=resources:Colors.AccentLight}" 
             BorderColor="{x:Static Member=resources:Colors.BackgroundDark}" 
             BorderWidth="{x:Static Member=resources:BorderSize.BorderStandard}"
             CornerRadius="{x:Static Member=resources:Radius.RadiusStandard}"
-            HeightRequest="44"
+            HeightRequest="48"
             WidthRequest="215">
             <Button.Margin>
                 <Thickness Bottom="{x:Static Member=resources:Spacing.S7x}"/>
@@ -51,7 +52,8 @@
             Grid.Row="1"
             Placeholder="Search" 
             FontFamily="{x:Static Member=resources:Font.FontFamilyStandard}" 
-            FontSize="{x:Static Member=resources:FontSizes.PLargeSize}">
+            FontSize="{x:Static Member=resources:FontSizes.PLargeSize}"
+            CharacterSpacing="{x:Static resources:CharacterSpacing.PMediumSpacing}">
             <Entry.Margin>
                 <Thickness Bottom="{x:Static Member=resources:Spacing.S7x}"/>
             </Entry.Margin>
@@ -109,6 +111,7 @@
                                             Text="{Binding Name}" 
                                             FontFamily="{x:Static Member=resources:Font.FontFamilySemiBold}" 
                                             FontSize="{x:Static Member=resources:FontSizes.PMediumSize}"
+                                            CharacterSpacing="{x:Static resources:CharacterSpacing.PMediumSpacing}"
                                             TextColor="{x:Static Member=resources:Colors.FontDark}"/>
                                 </StackLayout>
 

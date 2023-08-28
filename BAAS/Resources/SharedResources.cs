@@ -21,6 +21,23 @@ namespace BAAS.Resources
         public static readonly double PLargeSize = 18;
         public static readonly double PMediumSize = 16;
         public static readonly double PSmallSize = 14;
+    }    
+    static class LineHeight
+    {
+        public static readonly double H1Height = 1;
+        public static readonly double H2Height = 1;
+        public static readonly double PLargeHeight = 1.5;
+        public static readonly double PMediumHeight = 1.5;
+        public static readonly double PSmallHeight = 1.5;
+    }    
+    
+    static class CharacterSpacing
+    {
+        public static readonly double H1Spacing = 0;
+        public static readonly double H2Spacing = 0.5;
+        public static readonly double PLargeSpacing = 1.2;
+        public static readonly double PMediumSpacing = 1.2;
+        public static readonly double PSmallSpacing = 1.2;
     }
 
     static class Colors
